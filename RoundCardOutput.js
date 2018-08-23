@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {TextInput, TouchableHighlight, StyleSheet, Dimensions} from 'react-native';
-import { Container, Header, Content, Card, CardItem, Body, Text, Tab, Tabs, ScrollableTab } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Body, Text} from 'native-base';
 
 export default class RoundCardOutput extends Component {
     constructor(props) {
@@ -50,7 +50,7 @@ export default class RoundCardOutput extends Component {
             </CardItem>
             <CardItem>
                 <Body style={{ flexDirection:'row',justifyContent: 'space-between'}}>
-                    <Text style = {this.props.team2 === this.props.roundWinner ? styles.teamWon : styles.teamLost}>
+                    <Text style = {this.props.team2 === this.props.roundWinner  ? styles.teamWon : styles.teamLost}>
                         {this.props.team2Ranking}. {this.props.team2}
                     </Text>
                     <Text>

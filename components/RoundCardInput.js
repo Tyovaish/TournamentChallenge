@@ -16,28 +16,7 @@ export default class RoundCardInput extends Component {
                         {this.props.team1Ranking}. {this.props.team1}
                     </Text>
                     <TextInput
-                        keyboardType = 'numeric'  
-                        onChangeText={(team1NumberOfGameWins) => {
-                            if(isNaN(parseInt(team1NumberOfGameWins))){
-                                console.log("INPUT IS NOT A NUMBER")
-                                this.setState({team1NumberOfGameWins: 0})
-                            }else if(parseInt(team1NumberOfGameWins)>= 4){
-                                console.log("INPUT BIGGER THAN 4")
-                                this.setState({team1NumberOfGameWins: 4});
-                            } else {
-                                console.log("INPUT IS PERFECT!")
-                                this.setState({team1NumberOfGameWins:parseInt(team1NumberOfGameWins)});
-                            }
-
-                            if(parseInt(this.state.team1NumberOfGameWins)+parseInt(this.state.team2NumberOfGameWins)>7){
-                                this.setState({team2NumberOfGameWins: 3});
-                            }
-                            if(this.state.team1NumberOfGameWins === 4){
-                                this.setState({team1WinsRound: true, team2WinsRound: false})
-                            }
-                            console.log("FINAL OUTPUT: "+this.state.team1NumberOfGameWins.toString())
-                        }}
-                        value={this.state.team1NumberOfGameWins.toString()} />
+                        keyboardType = 'numeric'  />
                 </Body>
             </CardItem>
             <CardItem>

@@ -6,6 +6,7 @@ export default class RoundCardOutput extends Component {
     constructor(props) {
         super(props);
         this.determineStyleOfPredictedGame = this.determineStyleOfPredictedGame.bind(this);
+        this.determineStyleOfCurrentRound = this.determineStyleOfCurrentRound.bind(this);
       }
     determineStyleOfPredictedGame(currentTeam,teamPredictedName,roundWinner){
         if(currentTeam !== teamPredictedName){
@@ -16,6 +17,15 @@ export default class RoundCardOutput extends Component {
         }
         return styles.teamPredictedToWinCorrect;
 
+    }
+    determineStyleOfCurrentRound(currentTeam,roundWinner){
+            if(roundWinner === undefined){
+                return styles.teamStillCompeting;
+            }
+            if(currentTeam === roundWinner){
+                return styles.teamWon;
+            }
+            return styles.teamLost;
     }
 
     render() {
@@ -40,7 +50,7 @@ export default class RoundCardOutput extends Component {
             {team1PredictionDisplay}
             <CardItem>
                 <Body style={{ flexDirection:'row' , justifyContent: 'space-between'}}>
-                    <Text style= {this.props.team1 === this.props.roundWinner ? styles.teamWon : styles.teamLost} >
+                    <Text style= {this.determineStyleOfCurrentRound(this.props.team1,this.props.roundWinner)} >
                         {this.props.team1Ranking}. {this.props.team1}
                     </Text>
                     <Text> 
@@ -50,7 +60,7 @@ export default class RoundCardOutput extends Component {
             </CardItem>
             <CardItem>
                 <Body style={{ flexDirection:'row',justifyContent: 'space-between'}}>
-                    <Text style = {this.props.team2 === this.props.roundWinner  ? styles.teamWon : styles.teamLost}>
+                    <Text style = {this.determineStyleOfCurrentRound(this.props.team2,this.props.roundWinner)}>
                         {this.props.team2Ranking}. {this.props.team2}
                     </Text>
                     <Text>
@@ -78,5 +88,7 @@ const styles = StyleSheet.create({
     },
     teamWon:{
         fontWeight: 'bold'
+    },
+    teamStillCompeting:{
     }
   });

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {ScrollView, StyleSheet} from 'react-native'
 import {Container, Header, Content, Card, CardItem, Body, Text, Tab, Tabs, ScrollableTab } from 'native-base';
-import RoundCardOutput from './RoundCardOutput.js';
-import RoundCardInput from './RoundCardInput.js';
+import RoundCardOutput from './components/RoundCardOutput.js';
+import RoundCardInput from './components/RoundCardInput.js';
 
 export default class TournamentChallenge extends Component {
   render() {
@@ -14,20 +14,13 @@ export default class TournamentChallenge extends Component {
           <ScrollView>
             <Text> East </Text>
             <RoundCardOutput
-              roundWinner = "Orlando Magic"                        
+              roundWinner = "Houston Rockets"            
               team1Ranking = "1"
               team2Ranking = "2"
-              team1PredictedName = "Portland Trailblazers"
-              team2PredictedName = "Houston Rockets"
               team1 = "Orlando Magic"
               team2 = "Houston Rockets"
               team1Wins = "4"
               team2Wins = "2"/>
-            <RoundCardInput                      
-              team1Ranking = "1"
-              team2Ranking = "2"
-              team1 = "Orlando Magic"
-              team2 = "Houston Rockets"/>
             <Text> West</Text>
             <RoundCardOutput 
                        team1PredictedCorrectly = {false}

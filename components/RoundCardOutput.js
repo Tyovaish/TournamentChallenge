@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {TextInput, TouchableHighlight, StyleSheet, Dimensions} from 'react-native';
+import {TextInput, TouchableHighlight, StyleSheet, Dimensions, Image} from 'react-native';
 import { Container, Header, Content, Card, CardItem, Body, Text} from 'native-base';
-
 export default class RoundCardOutput extends Component {
     constructor(props) {
         super(props);
@@ -45,13 +44,15 @@ export default class RoundCardOutput extends Component {
                     </Text>
                 </Body>
             </CardItem>): null;
+        
         return (   
-        <Card style = {{width: 2.0 * Dimensions.get('window').width/3.0}}>
+        <Card style = {[{width: 3.0*Dimensions.get('window').width/4.0},this.props.style]}>
             {team1PredictionDisplay}
             <CardItem>
-                <Body style={{ flexDirection:'row' , justifyContent: 'space-between'}}>
+                <Body style={{ flexDirection:'row' , justifyContent: 'space-between'}}>            
                     <Text style= {this.determineStyleOfCurrentRound(this.props.team1,this.props.roundWinner)} >
-                        {this.props.team1Ranking}. {this.props.team1}
+                        <Image style = {{width: 20, height: 15}}source = {this.props.team1Logo} />
+                        {' '+this.props.team1Ranking}. {this.props.team1}
                     </Text>
                     <Text> 
                     {this.props.team1Wins}
@@ -61,7 +62,8 @@ export default class RoundCardOutput extends Component {
             <CardItem>
                 <Body style={{ flexDirection:'row',justifyContent: 'space-between'}}>
                     <Text style = {this.determineStyleOfCurrentRound(this.props.team2,this.props.roundWinner)}>
-                        {this.props.team2Ranking}. {this.props.team2}
+                    <Image style = {{width: 20, height: 15}}source = {this.props.team2Logo} />
+                        {' '+this.props.team2Ranking}. {this.props.team2}
                     </Text>
                     <Text>
                         {this.props.team2Wins}

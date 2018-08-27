@@ -9,7 +9,7 @@ export default class RoundCardInput extends Component {
     }
     render() {
         return (   
-        <Card style = {{width: 2.0 * Dimensions.get('window').width/3.0}}>
+        <Card style = {[{width: 2.0 * Dimensions.get('window').width/3.0},this.props.style]}>
             <CardItem>
                 <Body style={{ flexDirection:'row' , justifyContent: 'space-between',}}>
                     <Text style= {this.state.team1WinsRound ? styles.teamWon : null} >

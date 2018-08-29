@@ -9,9 +9,9 @@ export default class RoundCardInput extends Component {
     }
     render() {
         return (   
-        <Card style = {[{width: 2.0 * Dimensions.get('window').width/3.0},this.props.style]}>
+        <Card style = {[this.props.style]}>
             <CardItem>
-                <Body style={{ flexDirection:'row' , justifyContent: 'space-between',}}>
+                <Body style={{ flexDirection:'row' , justifyContent: 'space-between'}}>
                     <Text style= {this.state.team1WinsRound ? styles.teamWon : null} >
                         {this.props.team1Ranking}. {this.props.team1}
                     </Text>
@@ -20,7 +20,7 @@ export default class RoundCardInput extends Component {
                 </Body>
             </CardItem>
             <CardItem>
-                <Body style={{ flexDirection:'row',justifyContent: 'space-between'}}>
+                <Body style={{ flexDirection:'row',justifyContent: 'space-between',top:0}}>
                     <Text style = {this.state.team2WinsRound ? styles.teamWon : null}>
                         {this.props.team2Ranking}. {this.props.team2}
                     </Text>

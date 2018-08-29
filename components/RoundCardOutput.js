@@ -46,7 +46,7 @@ export default class RoundCardOutput extends Component {
             </CardItem>): null;
         
         return (   
-        <Card style = {[{width: 3.0*Dimensions.get('window').width/4.0},this.props.style]}>
+        <Card style = {[this.props.style]}>
             {team1PredictionDisplay}
             <CardItem>
                 <Body style={{ flexDirection:'row' , justifyContent: 'space-between'}}>            
@@ -92,5 +92,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     teamStillCompeting:{
+        fontWeight: 'bold'
     }
   });
